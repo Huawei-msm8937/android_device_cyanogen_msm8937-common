@@ -26,7 +26,7 @@
 #
 
 # the DIAG device node is not world writable/readable.
-/dev/diag                 0666   system     qcom_diag
+/dev/diag                 0660   system     qcom_diag
 
 /dev/genlock              0666   system     system
 /dev/kgsl                 0666   system     system
@@ -250,3 +250,12 @@
 
 # Add device block for FRP
 /dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
+
+# fpc Fingerprint
+/sys/devices/soc/soc:fpc1020		hw_reset			0220   system     system
+/sys/devices/soc/soc:fpc1020		irq	        		0660   system     system
+/sys/devices/soc/soc:fpc1020      	wakeup_enable	        	0220   system     system
+/sys/devices/soc/soc:fpc1020      	compatible_all	        	0220   system     system
+
+# goodix
+/dev/goodix_fp            0666   root       root
